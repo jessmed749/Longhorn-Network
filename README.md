@@ -1,5 +1,5 @@
 # LonghornNetwork
-## ECE 422C Lab 5: Networking with Fellow Longhorns!
+## ECE 422C Lab 4, 5, and 6: Networking with Fellow Longhorns!
 
 ### Longhorn Network
 
@@ -16,6 +16,8 @@ This project simulates a social network called **Longhorn Network**, where stude
 
 ### Getting Started
 
+### IMPORTANT: Please read through the ENTIRE LAB. Implementation details for a later due date might be important now. In practice, it is important to plan ahead!
+
 #### Folder Structure
 - `src/`: Contains the main code files.
 - `testing/`: Contains `input_sample.txt` and `output_sample.txt`: Sample input and output file format.
@@ -24,7 +26,7 @@ This project simulates a social network called **Longhorn Network**, where stude
 #### Prerequisites
 - **Java**
 - Basic knowledge of graph algorithms, threading, and file I/O.
-- If you are unfamiliar with Gale-Shapley, you will find [these resources] (https://www.sanfoundry.com/java-program-gale-shapley-algorithm/) helpful. 
+- If you are unfamiliar with Gale-Shapley, you will find [these resources] (https://www.sanfoundry.com/java-program-gale-shapley-algorithm/) helpful. We should be going over other algorithms in class.
 ---
 
 ### Instructions
@@ -33,23 +35,18 @@ This project simulates a social network called **Longhorn Network**, where stude
 1. **Fork** this repository to start working on your own copy. (Not necessary if you can do step 2-6 without any Forbidden Errors)
 2. **Clone** the repository to your local machine:
    ```bash
-   git clone https://github.com/ayushroychowdhury/LonghornNetwork.git
-3. **Create a branch with your name**
-   ```bash
-   git checkout -b your-branch-name
-4. **Choose what you want to add and commit**
+   git clone https://github.com/<your-username>/LonghornNetwork.git
+3. **Choose what you want to add and commit**
    ```bash
    git add <filepath/filename>
    git commit -m "commit message of your choosing"
-6. **Push to your branch**, DO NOT COMMIT OR PUSH TO MAIN
+4. **Push to your branch**, DO NOT COMMIT OR PUSH TO MAIN
    ```bash
-   git status ##make sure that your branch name pops up here
+   git status ##make sure that main pops up here
    git push
-
-7. If this does not make sense, please check announcement walking you through the process with a simple video. 
 ---
 
-### Step 2: Generate UML Diagram, State Diagram and Javadoc, DUE DATE: Nov 20th, 2024 11:59pm
+### Step 2: Generate UML Diagram, State Diagram and Javadoc, DUE DATE: Mar 26th, 2024 11:59pm
 
 - **Generate UML Diagram and State Diagram**:
   - Create a UML diagram based on the class and method signatures.
@@ -61,7 +58,7 @@ This project simulates a social network called **Longhorn Network**, where stude
   - Include descriptions of parameters and return types.
 ---
 
-### Step 3: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Dec 4th, 2024 11:59pm
+### Step 3: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Mar 26th, 2024 11:59pm
 
 Follow the steps below to implement the core functionality of the Longhorn Network. Each section provides specific details, common edge cases, and additional clarifications to help you complete the assignment.
 
@@ -78,6 +75,7 @@ Follow the steps below to implement the core functionality of the Longhorn Netwo
   - Incorrect formatting in input file (e.g., missing `:` separator).
 
 ---
+### Step 4: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Apr 16th, 2024 11:59pm
 
 #### 2. Roommate Matching (`GaleShapley.java`)
 - **Task**: Implement the Gale-Shapley stable matching algorithm to pair students based on roommate preferences.
@@ -198,6 +196,12 @@ Follow the steps below to implement the core functionality of the Longhorn Netwo
   - Compare the output of your implementation with the provided `output_sample.txt`.
   - Write your own additional test cases to ensure robustness and correctness.
 
+### Step 5: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Apr 30th, 2024 11:59pm
+
+#### SWING UI
+
+##### An implementation of an user interface using Swing UI. An easy implementation would be to visualize the student graph as either an adjacency list or adjacency matrix, as well as visualizing the roommates, pod formations. More directions on SWING UI will be released on April 16th. 
+
 
 ---
 
@@ -277,11 +281,6 @@ Test your graph implementation before using it in algorithms:
   2. Students with identical connection strengths to multiple others.
 
 ---
-
-### BONUS: SWING UI (20%)
-
-#### An implementation of an user interface using Swing UI will earn a bonus of 20%. An easy implementation would be to visualize the student graph as either an adjacency list or adjacency matrix, as well as visualizing the roommates, pod formations. Ultimately, the implemtation of the UI is up to you but there should be a use case for it. The UI has to also be fully functional to earn full bonus points. There is partial of 10% only if part of the UI works. 
-
 
 ### Notes for Students
 - The `StudentGraph` class provides the foundation for both pod formation and referral path finding. Ensure your implementation is robust and efficient.
