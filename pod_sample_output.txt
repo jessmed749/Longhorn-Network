@@ -1,0 +1,15 @@
+Roommate Assignment:
+Simon is roommates with Whale
+Jimmy is roommates with Timmy
+Whale is roommates with Simon
+Timmy is roommates with Jimmy
+
+Pod Assignments:
+  Pod 0: Issac, Simon, Jimmy, Whale,
+  Pod 1: Timmy,
+
+...
+
+IMPORTANT:
+    This test assumes you start your pod formation by choosing Issac first.
+    I.E. PBAC Node = Issac. Then, PBAC Node = Timmy.

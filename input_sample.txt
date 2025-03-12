@@ -1,0 +1,19 @@
+Student:
+Name: Alice
+Age: 20
+Gender: Female
+Year: 2
+Major: Computer Science
+GPA: 3.8
+RoommatePreferences: Bob, Charlie
+PreviousInternships: Google, Amazon
+
+Student:
+Name: Bob
+Age: 21
+Gender: Male
+Year: 3
+Major: Electrical Engineering
+GPA: 3.5
+RoommatePreferences: Alice
+PreviousInternships: Microsoft

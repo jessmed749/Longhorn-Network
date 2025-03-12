@@ -1,0 +1,24 @@
+Roommate Assignment:
+Simon is roommates with Whale
+Jimmy is roommates with Timmy
+Whale is roommates with Simon
+Timmy is roommates with Jimmy
+
+Pod Assignments:
+  Pod 0: Issac,
+  Pod 1: Simon, Jimmy, Whale, Timmy,
+
+For Issac:
+No referral path found
+
+For Timmy:
+No referral path found
+
+For Timmy:
+No referral path found
+
+IMPORTANT:
+    Your main should invoke the following functions:
+        pathFinder.findReferralPath(graph.getStudent("Issac"), "FindMe");
+        pathFinder.findReferralPath(graph.getStudent("Timmy"), "FindMe");
+        pathFinder.findReferralPath(graph.getStudent("Timmy"), "IDontExist");

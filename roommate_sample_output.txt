@@ -1,0 +1,17 @@
+Roommate Assignment:
+W3 is roommates with M5
+W1 is roommates with M4
+M1 is roommates with W5
+M2 is roommates with W2
+W5 is roommates with M1
+M3 is roommates with W4
+W4 is roommates with M3
+W2 is roommates with M2
+M5 is roommates with W3
+M4 is roommates with W1
+
+...
+
+IMPORTANT:
+    Depending on your implementation, you may have to switch the order of men and women in the input text.
+    I.E. Instead of Starting with W1, W2, ..., start with M1, M2, ...

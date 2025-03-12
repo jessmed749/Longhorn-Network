@@ -1,0 +1,100 @@
+
+Student:
+Name: M1
+Age: 20
+Gender: Female
+Year: 2
+Major: Computer Science
+GPA: 3.8
+RoommatePreferences: W5, W2, W3, W4, W1
+PreviousInternships: Google, Amazon
+
+Student:
+Name: M2
+Age: 21
+Gender: Male
+Year: 3
+Major: Electrical Engineering
+GPA: 3.5
+RoommatePreferences: W2, W5, W1, W3, W4
+PreviousInternships: Microsoft
+
+Student:
+Name: M3
+Age: 20
+Gender: Female
+Year: 2
+Major: Computer Science
+GPA: 3.8
+RoommatePreferences: W4, W3, W2, W1, W5
+PreviousInternships: Google, Amazon
+
+Student:
+Name: M4
+Age: 21
+Gender: Male
+Year: 3
+Major: Electrical Engineering
+GPA: 3.5
+RoommatePreferences: W1, W2, W3, W4, W5
+PreviousInternships: Microsoft
+
+Student:
+Name: M5
+Age: 20
+Gender: Female
+Year: 2
+Major: Computer Science
+GPA: 3.8
+RoommatePreferences: W5, W2, W3, W4, W1
+PreviousInternships: Google, Amazon
+
+Student:
+Name: W1
+Age: 21
+Gender: Male
+Year: 3
+Major: Electrical Engineering
+GPA: 3.5
+RoommatePreferences: M5, M3, M4, M1, M2
+PreviousInternships: Microsoft
+
+Student:
+Name: W2
+Age: 20
+Gender: Female
+Year: 2
+Major: Computer Science
+GPA: 3.8
+RoommatePreferences: M1, M2, M3, M5, M4
+PreviousInternships: Google, Amazon
+
+Student:
+Name: W3
+Age: 21
+Gender: Male
+Year: 3
+Major: Electrical Engineering
+GPA: 3.5
+RoommatePreferences: M4, M5, M3, M2, M1
+PreviousInternships: Microsoft
+
+Student:
+Name: W4
+Age: 20
+Gender: Female
+Year: 2
+Major: Computer Science
+GPA: 3.8
+RoommatePreferences: M5, M2, M1, M4, M3
+PreviousInternships: Google, Amazon
+
+Student:
+Name: W5
+Age: 21
+Gender: Male
+Year: 3
+Major: Electrical Engineering
+GPA: 3.5
+RoommatePreferences: M2, M1, M4, M3, M5
+PreviousInternships: Microsoft

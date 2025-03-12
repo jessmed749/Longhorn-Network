@@ -1,0 +1,10 @@
+Roommate Assignments:
+Alice is roommates with Bob
+Bob is roommates with Alice
+
+Pod Assignments:
+Pod 1: Alice, Bob, Charlie
+...
+
+Referral Path:
+Path to Google: Alice -> Charlie -> David

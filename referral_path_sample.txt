@@ -1,0 +1,49 @@
+Student:
+Name: Simon
+Age: 20
+Gender: Female
+Year: 2
+Major: Computer Science
+GPA: 3.8
+RoommatePreferences: Whale
+PreviousInternships: Google, Amazon, CoolCompany, FindMe
+
+Student:
+Name: Whale
+Age: 20
+Gender: Male
+Year: 3
+Major: Computer Science
+GPA: 3.5
+RoommatePreferences: Simon
+PreviousInternships: Google, AmazingTech, FindMe
+
+Student:
+Name: Timmy
+Age: 21
+Gender: Male
+Year: 3
+Major: ECE
+GPA: 3.5
+RoommatePreferences: Jimmy
+PreviousInternships: Microsoft, AmazingTech, CoolCompany, FindMe
+
+Student:
+Name: Jimmy
+Age: 21
+Gender: Male
+Year: 3
+Major: ECE
+GPA: 3.5
+RoommatePreferences: Timmy
+PreviousInternships: Amazon, Microsoft, Logitech, FindMe
+
+Student:
+Name: Issac
+Age: 100
+Gender: No
+Year: 60
+Major: Undecided
+GPA: 1.0
+RoommatePreferences:
+PreviousInternships:
