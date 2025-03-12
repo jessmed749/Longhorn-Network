@@ -62,8 +62,8 @@ This project simulates a social network called **Longhorn Network**, where stude
 
 Follow the steps below to implement the core functionality of the Longhorn Network. Each section provides specific details, common edge cases, and additional clarifications to help you complete the assignment.
 
-#### 1. Data Parsing (`DataParser.java`)
-- **Task**: Implement the `parseStudents` method to read student information from a file and create `UniversityStudent` objects.
+#### 1. Data Parsing (`DataParser.java`) and Student Graph ('StudentGraph.java')
+- **Task**: Implement the `parseStudents` method to read student information from a file and create `UniversityStudent` objects. This will help begin implementing StudentGraph.java (see below for details). 
 - **Details**:
   - Input file format is provided in `input_sample.txt`.
   - Parse all attributes (e.g., name, age, gender, major, GPA).
