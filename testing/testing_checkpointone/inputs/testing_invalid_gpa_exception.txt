@@ -1,0 +1,9 @@
+Student:
+Name: Timmy
+Age: 21
+Gender: Male
+Year: 3
+Major: ECE
+GPA: ThreePointFive
+RoommatePreferences: Jimmy
+PreviousInternships: Microsoft, AmazingTech, CoolCompany
