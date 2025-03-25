@@ -1,0 +1,19 @@
+Student:
+Name: Emily
+Age: 22
+Gender: Female
+Year: 4
+Major: Mathematics
+GPA: 3.9
+RoommatePreferences: John, Mary
+PreviousInternships: IBM, Google
+
+Student:
+Name: John
+Age: 22
+Gender: Male
+Year: 4
+Major: Mathematics
+GPA: 3.7
+RoommatePreferences: Emily
+PreviousInternships: IBM
