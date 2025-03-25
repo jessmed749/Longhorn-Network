@@ -1,0 +1,59 @@
+Student:
+Name: Anna
+Age: 19
+Gender: Female
+Year: 1
+Major: Physics
+GPA: 3.7
+RoommatePreferences: Bob, Charlie
+PreviousInternships: NASA
+
+Student:
+Name: Bob
+Age: 19
+Gender: Male
+Year: 1
+Major: Physics
+GPA: 3.6
+RoommatePreferences: Anna
+PreviousInternships: NASA
+
+Student:
+Name: Charlie
+Age: 20
+Gender: Male
+Year: 2
+Major: Chemistry
+GPA: 3.5
+RoommatePreferences: Anna, Dave
+PreviousInternships: None
+
+Student:
+Name: Dave
+Age: 20
+Gender: Male
+Year: 2
+Major: Chemistry
+GPA: 3.5
+RoommatePreferences: Charlie
+PreviousInternships: None
+
+Student:
+Name: Emma
+Age: 21
+Gender: Female
+Year: 3
+Major: Biology
+GPA: 3.8
+RoommatePreferences: Frank
+PreviousInternships: MIT
+
+Student:
+Name: Frank
+Age: 21
+Gender: Male
+Year: 3
+Major: Biology
+GPA: 3.8
+RoommatePreferences: Emma
+PreviousInternships: MIT
