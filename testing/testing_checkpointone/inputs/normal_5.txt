@@ -1,0 +1,29 @@
+Student:
+Name: Alice
+Age: 19
+Gender: Female
+Year: 1
+Major: Biology
+GPA: 3.6
+RoommatePreferences: Bob, Charlie
+PreviousInternships: None
+
+Student:
+Name: Bob
+Age: 19
+Gender: Male
+Year: 1
+Major: Biology
+GPA: 3.4
+RoommatePreferences: Alice
+PreviousInternships: None
+
+Student:
+Name: Charlie
+Age: 19
+Gender: Male
+Year: 1
+Major: Biology
+GPA: 3.4
+RoommatePreferences: Alice
+PreviousInternships: None
