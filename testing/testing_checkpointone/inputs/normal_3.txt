@@ -1,0 +1,9 @@
+Student:
+Name: Issac
+Age: 20
+Gender: Male
+Year: 3
+Major: Computer Science
+GPA: 3.5
+RoommatePreferences: Simon
+PreviousInternships: Logitech, Amazon
