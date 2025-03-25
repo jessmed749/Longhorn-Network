@@ -1,0 +1,9 @@
+Student:
+Name: Whale
+Age: Twenty
+Gender: Male
+Year: 3
+Major: Computer Science
+GPA: 3.5
+RoommatePreferences: Simon
+PreviousInternships: Google, AmazingTech
