@@ -1,0 +1,15 @@
+Parsed 6 students from normal_multi_2.txt:
+UniversityStudent{name='Anna', age=19, gender='Female', year=1, major='Physics', GPA=3.7, roommatePreferences=[Bob, Charlie], previousInternships=[NASA]}
+UniversityStudent{name='Bob', age=19, gender='Male', year=1, major='Physics', GPA=3.6, roommatePreferences=[Anna], previousInternships=[NASA]}
+UniversityStudent{name='Charlie', age=20, gender='Male', year=2, major='Chemistry', GPA=3.5, roommatePreferences=[Anna, Dave], previousInternships=[None]}
+UniversityStudent{name='Dave', age=20, gender='Male', year=2, major='Chemistry', GPA=3.5, roommatePreferences=[Charlie], previousInternships=[None]}
+UniversityStudent{name='Emma', age=21, gender='Female', year=3, major='Biology', GPA=3.8, roommatePreferences=[Frank], previousInternships=[MIT]}
+UniversityStudent{name='Frank', age=21, gender='Male', year=3, major='Biology', GPA=3.8, roommatePreferences=[Emma], previousInternships=[MIT]}
+
+Student Graph:
+Anna -> Bob(14) Charlie(5)
+Bob -> Anna(14)
+Charlie -> Anna(5) Dave(10)
+Dave -> Charlie(10)
+Emma -> Frank(14)
+Frank -> Emma(14)
