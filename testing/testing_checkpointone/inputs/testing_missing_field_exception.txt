@@ -1,0 +1,8 @@
+Student:
+Name: Simon
+Age: 20
+Gender: Female
+Year: 2
+Major: Computer Science
+GPA: 3.8
+PreviousInternships: Google, Amazon, CoolCompany
