@@ -9,22 +9,38 @@ public class Main {
         }
         String inputFile = args[0];
         try {
+            // Parse student data
             List<UniversityStudent> students = DataParser.parseStudents(inputFile);
-
+            System.out.println("Parsed " + students.size() + " students from " + inputFile + ":\n");
+            for (UniversityStudent student : students) {
+                System.out.println(student);
+            }
+            
             // Roommate matching
-            GaleShapley.assignRoommates(students);
-
+            //GaleShapley.assignRoommates(students);
+            
             // Pod formation
-            StudentGraph graph = new StudentGraph(students);
-            PodFormation podFormation = new PodFormation(graph);
-            podFormation.formPods(4);
-
+           // StudentGraph graph = new StudentGraph(students);
+           // PodFormation podFormation = new PodFormation(graph);
+           // podFormation.formPods(4);
+            
+            // Display the student graph
+            System.out.println("\nStudent Graph:");
+            graph.displayGraph();
+            
             // Referral path finding
-            ReferralPathFinder pathFinder = new ReferralPathFinder(graph);
+          //  ReferralPathFinder pathFinder = new ReferralPathFinder(graph);
             // TODO: Implement user interaction for specifying a target company
-
+            
+        } catch (NumberFormatException e) {
+            System.err.println("Number format error: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.err.println("Parsing error: " + e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("I/O error: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("An unexpected error occurred: " + e.getMessage());
         }
     }
 }
+
