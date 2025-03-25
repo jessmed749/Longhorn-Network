@@ -20,13 +20,13 @@ public class Main {
             //GaleShapley.assignRoommates(students);
             
             // Pod formation
-           // StudentGraph graph = new StudentGraph(students);
+            StudentGraph graph = new StudentGraph(students); //TODO: implement StudentGraph
            // PodFormation podFormation = new PodFormation(graph);
            // podFormation.formPods(4);
             
             // Display the student graph
             System.out.println("\nStudent Graph:");
-            graph.displayGraph();
+            graph.displayGraph(); //TODO: implement displayGraph
             
             // Referral path finding
           //  ReferralPathFinder pathFinder = new ReferralPathFinder(graph);
