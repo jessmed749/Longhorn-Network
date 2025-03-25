@@ -1,0 +1,13 @@
+Parsed 5 students from normal_multi_1.txt:
+UniversityStudent{name='Simon', age=20, gender='Female', year=2, major='Computer Science', GPA=3.8, roommatePreferences=[Whale, Issac], previousInternships=[Google, Amazon, CoolCompany]}
+UniversityStudent{name='Whale', age=20, gender='Male', year=3, major='Computer Science', GPA=3.5, roommatePreferences=[Simon, Timmy], previousInternships=[Google, AmazingTech]}
+UniversityStudent{name='Timmy', age=21, gender='Male', year=3, major='ECE', GPA=3.5, roommatePreferences=[Jimmy, Whale], previousInternships=[Microsoft, AmazingTech, CoolCompany]}
+UniversityStudent{name='Jimmy', age=21, gender='Male', year=3, major='ECE', GPA=3.5, roommatePreferences=[Timmy], previousInternships=[Amazon, Microsoft, Logitech]}
+UniversityStudent{name='Issac', age=20, gender='Male', year=3, major='Computer Science', GPA=3.5, roommatePreferences=[Simon], previousInternships=[Logitech, Amazon]}
+
+Student Graph:
+Simon -> Whale(14) Issac(14) Timmy(4) Jimmy(4)
+Whale -> Simon(14) Timmy(9) Issac(5)
+Timmy -> Jimmy(14) Whale(9)
+Jimmy -> Timmy(14) Issac(8) Simon(4)
+Issac -> Simon(14) Whale(5) Jimmy(8)
