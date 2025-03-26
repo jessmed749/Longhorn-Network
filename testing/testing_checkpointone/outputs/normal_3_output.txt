@@ -1,5 +1,2 @@
 Parsed 1 student from normal_3.txt:
 UniversityStudent{name='Issac', age=20, gender='Male', year=3, major='Computer Science', GPA=3.5, roommatePreferences=[Simon], previousInternships=[Logitech, Amazon]}
-
-Student Graph:
-Issac ->
