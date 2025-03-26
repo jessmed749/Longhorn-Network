@@ -3,8 +3,3 @@ UniversityStudent{name='Alice', age=19, gender='Female', year=1, major='Biology'
 UniversityStudent{name='Bob', age=19, gender='Male', year=1, major='Biology', GPA=3.4, roommatePreferences=[Alice], previousInternships=[None]}
 UniversityStudent{name='Charlie', age=19, gender='Male', year=1, major='Biology', GPA=3.4, roommatePreferences=[Alice], previousInternships=[None]}
 
-Student Graph:
-Alice -> Bob(10) Charlie(10)
-Bob -> Alice(10) Charlie(5)
-Charlie -> Alice(10) Bob(5)
-
