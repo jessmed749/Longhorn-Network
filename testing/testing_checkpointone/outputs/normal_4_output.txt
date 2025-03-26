@@ -1,7 +1,3 @@
 Parsed 2 students from normal_4.txt:
 UniversityStudent{name='Emily', age=22, gender='Female', year=4, major='Mathematics', GPA=3.9, roommatePreferences=[John, Mary], previousInternships=[IBM, Google]}
 UniversityStudent{name='John', age=22, gender='Male', year=4, major='Mathematics', GPA=3.7, roommatePreferences=[Emily], previousInternships=[IBM]}
-
-Student Graph:
-Emily -> John(14)
-John -> Emily(14)
