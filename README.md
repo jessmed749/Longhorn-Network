@@ -77,132 +77,6 @@ Follow the steps below to implement the core functionality of the Longhorn Netwo
 ---
 ### Step 4: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Apr 16th, 2024 11:59pm
 
-#### 2. Roommate Matching (`GaleShapley.java`)
-- **Task**: Implement the Gale-Shapley stable matching algorithm to pair students based on roommate preferences.
-- **Details**:
-  - Each student has a list of preferred roommates. Mutual preferences are prioritized.
-  - Students without preferences should remain unpaired.
-  - Handle cases where preferences are incomplete or cyclic.
-
-- **Steps**:
-  - Parse preference lists for all students.
-  - Use a queue for unpaired students to iterate through proposals.
-  - A proposal is accepted if the receiver is unpaired or prefers the proposer over their current roommate.
-
-- **Edge Cases**:
-  - Students with empty or partial preference lists.
-  - Cyclic or conflicting preferences (e.g., Alice prefers Bob, Bob prefers Charlie, Charlie prefers Alice).
-
----
-
-#### 3. Pod Formation (`PodFormation.java`)
-- **Task**: Use Prim’s algorithm to form pods (groups of students) by minimizing connection strengths.
-- **Details**:
-  - **Number of Pods**: Divide the students into pods of size ≤ `podSize`.
-  - **Disconnected Graphs**: Assume the input graph can have disconnected components. Each component should form separate pods.
-  - Use connection strength (see **Connection Strength** below) to build the weighted graph.
-
-- **Steps**:
-  - Create an adjacency list or matrix representation of the graph.
-  - Apply Prim’s algorithm to construct a Minimum Spanning Tree (MST) for each connected component.
-  - Divide the MST into pods of the specified size (`podSize`).
-
-- **Edge Cases**:
-  - Single-node components (a single student forms their own pod).
-  - Graphs with varying numbers of students or incomplete connections.
-
----
-
-#### 4. Referral Path Finding (`ReferralPathFinder.java`)
-- **Task**: Use Dijkstra’s algorithm to find the shortest path (strongest connection) to a student who interned at a specific company.
-- **Details**:
-  - Stronger connections should be treated as "shorter" paths.
-  - Allow user input to specify the target company.
-
-- **Steps**:
-  - Invert the connection weights (e.g., use `10 - weight` for stronger connections).
-  - Traverse the graph using Dijkstra’s algorithm from the starting student.
-  - Return the path if a student with the target internship is found.
-
-- **Edge Cases**:
-  - No student with the target internship.
-  - Disconnected graphs with no path to a target.
-
----
-
-#### 5. Connection Strength (`calculateConnectionStrength`)
-- **Task**: Implement a formula to calculate the connection strength between two students based on the following criteria:
-  - **Roommate**: Add 5 if they are roommates.
-  - **Shared Internships**: Add 4 for each shared internship.
-  - **Same Major**: Add 3 if they share the same major.
-  - **Same Age**: Add 2 if they are the same age.
-
-- **Details**:
-  - This method will be implemented in the `UniversityStudent` class as an override of the abstract method in `Student`.
-  - Ensure the method accurately accounts for all the above factors to return the correct connection strength.
-
-- **Edge Cases**:
-  - Students with no shared attributes (e.g., no roommate, no shared internships, etc.).
-  - Students with no chat history or no defined pod membership.
-  - Students who are roommates but have no other connections.
-
----
-
-#### 6. Multithreading (`FriendRequestThread` and `ChatThread`)
-- **Task**: Simulate concurrent actions like sending friend requests and chatting between students.
-- **Details**:
-  - Use threads to manage these interactions concurrently, simulating real-time behavior.
-  - Ensure thread-safe operations when updating shared resources such as `chatHistory`.
-
-- **Steps**:
-  1. Use `ExecutorService` to manage multiple threads efficiently.
-  2. Implement thread-safe methods using synchronized blocks or concurrent data structures to handle:
-     - Friend requests: Add students to each other’s friend lists.
-     - Messaging: Update chat histories between students.
-  3. Log interactions (e.g., "Alice sent a friend request to Bob") for debugging and verification.
-
-- **Testing**:
-  - Test with overlapping friend requests and chat threads to ensure thread safety and proper synchronization.
-  - Verify that all friend requests and messages are processed without data corruption or missed updates.
-
----
-
-#### 7. Testing and Validation
-- **Sample Input**:
-  - Use the provided `input_sample.txt` to verify your implementation.
-  - Ensure all attributes in the input file (e.g., roommate preferences, internships) are parsed correctly.
-
-- **Expected Output**:
-  - Roommate Assignments:
-    - Each student should be matched with their highest-priority roommate if mutually possible.
-  - Pods:
-    - Pods should have no more than the specified `podSize`.
-    - Each pod should consist of students with strong connection strengths.
-  - Referral Paths:
-    - The path to a student with the specified internship should have the shortest total connection cost.
-
-- **Edge Cases**:
-  1. **Incomplete Data**:
-     - Students with missing roommate preferences, no internships, or incomplete attributes.
-  2. **Disconnected Graphs**:
-     - Ensure that all connected components are handled independently.
-  3. **Isolated Nodes**:
-     - A single student with no connections should form their own pod.
-  4. **Multithreading**:
-     - Overlapping threads for friend requests and messaging must not corrupt shared resources.
-     - Ensure all threads finish execution within a reasonable time frame.
-
-- **Validation**:
-  - Compare the output of your implementation with the provided `output_sample.txt`.
-  - Write your own additional test cases to ensure robustness and correctness.
-
-### Step 5: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Apr 30th, 2024 11:59pm
-
-#### SWING UI
-
-##### An implementation of an user interface using Swing UI. An easy implementation would be to visualize the student graph as either an adjacency list or adjacency matrix, as well as visualizing the roommates, pod formations. More directions on SWING UI will be released on April 16th. 
-
-
 ---
 
 ### Suggestions for `StudentGraph`
@@ -281,6 +155,111 @@ Test your graph implementation before using it in algorithms:
   2. Students with identical connection strengths to multiple others.
 
 ---
+
+
+#### 2. Roommate Matching (`GaleShapley.java`)
+- **Task**: Implement the Gale-Shapley stable matching algorithm to pair students based on roommate preferences.
+- **Details**:
+  - Each student has a list of preferred roommates. Mutual preferences are prioritized.
+  - Students without preferences should remain unpaired.
+  - Handle cases where preferences are incomplete or cyclic.
+
+- **Steps**:
+  - Parse preference lists for all students.
+  - Use a queue for unpaired students to iterate through proposals.
+  - A proposal is accepted if the receiver is unpaired or prefers the proposer over their current roommate.
+
+- **Edge Cases**:
+  - Students with empty or partial preference lists.
+  - Cyclic or conflicting preferences (e.g., Alice prefers Bob, Bob prefers Charlie, Charlie prefers Alice).
+
+---
+
+#### 3. Referral Path Finding (`ReferralPathFinder.java`)
+- **Task**: Use Dijkstra’s algorithm to find the shortest path (strongest connection) to a student who interned at a specific company.
+- **Details**:
+  - Stronger connections should be treated as "shorter" paths.
+  - Allow user input to specify the target company.
+
+- **Steps**:
+  - Invert the connection weights (e.g., use `10 - weight` for stronger connections).
+  - Traverse the graph using Dijkstra’s algorithm from the starting student.
+  - Return the path if a student with the target internship is found.
+
+- **Edge Cases**:
+  - No student with the target internship.
+  - Disconnected graphs with no path to a target.
+
+---
+
+#### 4. Connection Strength (`calculateConnectionStrength`)
+- **Task**: Implement a formula to calculate the connection strength between two students based on the following criteria:
+  - **Roommate**: Add 5 if they are roommates.
+  - **Shared Internships**: Add 4 for each shared internship.
+  - **Same Major**: Add 3 if they share the same major.
+  - **Same Age**: Add 2 if they are the same age.
+
+- **Details**:
+  - This method will be implemented in the `UniversityStudent` class as an override of the abstract method in `Student`.
+  - Ensure the method accurately accounts for all the above factors to return the correct connection strength.
+
+- **Edge Cases**:
+  - Students with no shared attributes (e.g., no roommate, no shared internships, etc.).
+  - Students with no chat history or no defined pod membership.
+  - Students who are roommates but have no other connections.
+
+---
+
+#### 5. Multithreading (`FriendRequestThread` and `ChatThread`)
+- **Task**: Simulate concurrent actions like sending friend requests and chatting between students.
+- **Details**:
+  - Use threads to manage these interactions concurrently, simulating real-time behavior.
+  - Ensure thread-safe operations when updating shared resources such as `chatHistory`.
+
+- **Steps**:
+  1. Use `ExecutorService` to manage multiple threads efficiently.
+  2. Implement thread-safe methods using synchronized blocks or concurrent data structures to handle:
+     - Friend requests: Add students to each other’s friend lists.
+     - Messaging: Update chat histories between students.
+  3. Log interactions (e.g., "Alice sent a friend request to Bob") for debugging and verification.
+
+- **Testing**:
+  - Test with overlapping friend requests and chat threads to ensure thread safety and proper synchronization.
+  - Verify that all friend requests and messages are processed without data corruption or missed updates.
+
+---
+
+#### 6. Testing and Validation
+- **Sample Input**:
+  - Use the provided `input_sample.txt` to verify your implementation.
+  - Ensure all attributes in the input file (e.g., roommate preferences, internships) are parsed correctly.
+
+- **Expected Output**:
+  - Roommate Assignments:
+    - Each student should be matched with their highest-priority roommate if mutually possible.
+  - Referral Paths:
+    - The path to a student with the specified internship should have the shortest total connection cost.
+
+- **Edge Cases**:
+  1. **Incomplete Data**:
+     - Students with missing roommate preferences, no internships, or incomplete attributes.
+  2. **Disconnected Graphs**:
+     - Ensure that all connected components are handled independently.
+  3. **Isolated Nodes**:
+     - A single student with no connections should form their own pod.
+  4. **Multithreading**:
+     - Overlapping threads for friend requests and messaging must not corrupt shared resources.
+     - Ensure all threads finish execution within a reasonable time frame.
+
+- **Validation**:
+  - Compare the output of your implementation with the provided `output_sample.txt`.
+  - Write your own additional test cases to ensure robustness and correctness.
+
+### Step 5: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Apr 30th, 2024 11:59pm
+
+#### SWING UI
+
+##### An implementation of an user interface using Swing UI. An easy implementation would be to visualize the student graph as either an adjacency list or adjacency matrix, as well as visualizing the roommates, pod formations. More directions on SWING UI will be released on April 16th. 
 
 ### Notes for Students
 - The `StudentGraph` class provides the foundation for both pod formation and referral path finding. Ensure your implementation is robust and efficient.
