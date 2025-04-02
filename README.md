@@ -157,7 +157,7 @@ Test your graph implementation before using it in algorithms:
 ---
 
 
-#### 2. Roommate Matching (`GaleShapley.java`)
+#### 7. Roommate Matching (`GaleShapley.java`)
 - **Task**: Implement the Gale-Shapley stable matching algorithm to pair students based on roommate preferences.
 - **Details**:
   - Each student has a list of preferred roommates. Mutual preferences are prioritized.
@@ -175,7 +175,7 @@ Test your graph implementation before using it in algorithms:
 
 ---
 
-#### 3. Referral Path Finding (`ReferralPathFinder.java`)
+#### 8. Referral Path Finding (`ReferralPathFinder.java`)
 - **Task**: Use Dijkstra’s algorithm to find the shortest path (strongest connection) to a student who interned at a specific company.
 - **Details**:
   - Stronger connections should be treated as "shorter" paths.
@@ -192,7 +192,7 @@ Test your graph implementation before using it in algorithms:
 
 ---
 
-#### 4. Connection Strength (`calculateConnectionStrength`)
+#### 9. Connection Strength (`calculateConnectionStrength`)
 - **Task**: Implement a formula to calculate the connection strength between two students based on the following criteria:
   - **Roommate**: Add 5 if they are roommates.
   - **Shared Internships**: Add 4 for each shared internship.
@@ -210,7 +210,7 @@ Test your graph implementation before using it in algorithms:
 
 ---
 
-#### 5. Multithreading (`FriendRequestThread` and `ChatThread`)
+#### 10. Multithreading (`FriendRequestThread` and `ChatThread`)
 - **Task**: Simulate concurrent actions like sending friend requests and chatting between students.
 - **Details**:
   - Use threads to manage these interactions concurrently, simulating real-time behavior.
@@ -229,7 +229,7 @@ Test your graph implementation before using it in algorithms:
 
 ---
 
-#### 6. Testing and Validation
+#### 11. Testing and Validation
 - **Sample Input**:
   - Use the provided `input_sample.txt` to verify your implementation.
   - Ensure all attributes in the input file (e.g., roommate preferences, internships) are parsed correctly.
@@ -255,7 +255,7 @@ Test your graph implementation before using it in algorithms:
   - Compare the output of your implementation with the provided `output_sample.txt`.
   - Write your own additional test cases to ensure robustness and correctness.
 
-### Step 5: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Apr 30th, 2024 11:59pm
+### Step 12: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Apr 30th, 2024 11:59pm
 
 #### SWING UI
 
