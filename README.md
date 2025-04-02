@@ -267,7 +267,7 @@ Test your graph implementation before using it in algorithms:
 
 ## FAQs
 
-### 1. Should we use inverted edge weights (10 - weight) in ` Formation`?
+### 1. Should we use inverted edge weights (10 - weight) in anywhere else?
 - **No**, inverted edge weights are only used in the referral path finder to prioritize stronger connections as shorter paths.
 - For   formation, use the **calculated connection strength** directly to minimize the total weight of the  s. This ensures that  s are formed based on the strongest relationships between students.
 
