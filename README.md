@@ -8,9 +8,8 @@ This project simulates a social network called **Longhorn Network**, where stude
 
 ### Key Objectives
 1. Implement the **Gale-Shapley** algorithm for roommate assignment.
-2. Form pods using **Prim’s algorithm** based on connection strengths.
-3. Find internship referral paths using **Dijkstra’s algorithm**.
-4. Use **multithreading** to simulate real-time actions like friend requests and chatting.
+2. Find internship referral paths using **Dijkstra’s algorithm**.
+3. Use **multithreading** to simulate real-time actions like friend requests and chatting.
 
 ---
 
