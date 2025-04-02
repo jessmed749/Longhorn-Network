@@ -255,7 +255,7 @@ Test your graph implementation before using it in algorithms:
   - Compare the output of your implementation with the provided `output_sample.txt`.
   - Write your own additional test cases to ensure robustness and correctness.
 
-### Step 12: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Apr 30th, 2024 11:59pm
+### Step 5: Implement Core Components DUE DATE FOR EVERYTHING BELOW: Apr 30th, 2024 11:59pm
 
 #### SWING UI
 
