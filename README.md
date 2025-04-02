@@ -4,7 +4,7 @@
 ### Longhorn Network
 
 ### Overview
-This project simulates a social network called **Longhorn Network**, where students are matched with roommates, assigned to pods, and find referral paths for internships.
+This project simulates a social network called **Longhorn Network**, where students are matched with roommates and find referral paths for internships.
 
 ### Key Objectives
 1. Implement the **Gale-Shapley** algorithm for roommate assignment.
@@ -80,7 +80,7 @@ Follow the steps below to implement the core functionality of the Longhorn Netwo
 
 ### Suggestions for `StudentGraph`
 
-The `StudentGraph` class is intentionally left for you to design and implement. This component is critical for both pod formation (using Prim’s algorithm) and referral path finding (using Dijkstra’s algorithm). Follow the steps below to implement it effectively.
+The `StudentGraph` class is intentionally left for you to design and implement. This component is critical for both   formation (using Prim’s algorithm) and referral path finding (using Dijkstra’s algorithm). Follow the steps below to implement it effectively.
 
 ---
 
@@ -204,7 +204,7 @@ Test your graph implementation before using it in algorithms:
 
 - **Edge Cases**:
   - Students with no shared attributes (e.g., no roommate, no shared internships, etc.).
-  - Students with no chat history or no defined pod membership.
+  - Students with no chat history or no defined   membership.
   - Students who are roommates but have no other connections.
 
 ---
@@ -245,7 +245,7 @@ Test your graph implementation before using it in algorithms:
   2. **Disconnected Graphs**:
      - Ensure that all connected components are handled independently.
   3. **Isolated Nodes**:
-     - A single student with no connections should form their own pod.
+     - A single student with no connections should form their own  .
   4. **Multithreading**:
      - Overlapping threads for friend requests and messaging must not corrupt shared resources.
      - Ensure all threads finish execution within a reasonable time frame.
@@ -258,23 +258,23 @@ Test your graph implementation before using it in algorithms:
 
 #### SWING UI
 
-##### An implementation of an user interface using Swing UI. An easy implementation would be to visualize the student graph as either an adjacency list or adjacency matrix, as well as visualizing the roommates, pod formations. More directions on SWING UI will be released on April 16th. 
+##### An implementation of an user interface using Swing UI. An easy implementation would be to visualize the student graph as either an adjacency list or adjacency matrix, as well as visualizing the roommates,   formations. More directions on SWING UI will be released on April 16th. 
 
 ### Notes for Students
-- The `StudentGraph` class provides the foundation for both pod formation and referral path finding. Ensure your implementation is robust and efficient.
+- The `StudentGraph` class provides the foundation for both   formation and referral path finding. Ensure your implementation is robust and efficient.
 - Use the provided method signatures and adjust as needed to meet the requirements of Prim’s and Dijkstra’s algorithms.
 - Ask questions during lab sessions or office hours if you’re stuck. Debugging the graph structure is critical for completing this assignment successfully.
 
 ## FAQs
 
-### 1. Should we use inverted edge weights (10 - weight) in `PodFormation`?
+### 1. Should we use inverted edge weights (10 - weight) in ` Formation`?
 - **No**, inverted edge weights are only used in the referral path finder to prioritize stronger connections as shorter paths.
-- For pod formation, use the **calculated connection strength** directly to minimize the total weight of the pods. This ensures that pods are formed based on the strongest relationships between students.
+- For   formation, use the **calculated connection strength** directly to minimize the total weight of the  s. This ensures that  s are formed based on the strongest relationships between students.
 
 ---
 
 ### 2. How do we get disconnected graphs as mentioned in the edge cases?
-- Students are disconnected if their **connection strength is 0**, meaning they share no attributes such as internships, pods, etc.
+- Students are disconnected if their **connection strength is 0**, meaning they share no attributes such as internships,  s, etc.
 - Disconnected graphs occur naturally when there are groups of students with no connections to each other.
   - For example:
     ```
