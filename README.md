@@ -193,10 +193,10 @@ Test your graph implementation before using it in algorithms:
 
 #### 9. Connection Strength (`calculateConnectionStrength`)
 - **Task**: Implement a formula to calculate the connection strength between two students based on the following criteria:
-  - **Roommate**: Add 5 if they are roommates.
-  - **Shared Internships**: Add 4 for each shared internship.
-  - **Same Major**: Add 3 if they share the same major.
-  - **Same Age**: Add 2 if they are the same age.
+  - **Roommate**: Add 4 if they are roommates.
+  - **Shared Internships**: Add 3 for each shared internship.
+  - **Same Major**: Add 2 if they share the same major.
+  - **Same Age**: Add 1 if they are the same age.
 
 - **Details**:
   - This method will be implemented in the `UniversityStudent` class as an override of the abstract method in `Student`.
