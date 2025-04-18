@@ -3,6 +3,8 @@ import java.util.*;
 public class GaleShapley {
     public static void assignRoommates(List<UniversityStudent> students) {
         // Track which proposal each student is up to
+        Map<UniversityStudent, UniversityStudent> roommatePairs = new HashMap<>();
+
         Map<UniversityStudent, Integer> nextProposalIndex = new HashMap<>();
         // Map to quickly lookup a student by name
         Map<String, UniversityStudent> nameToStudent = new HashMap<>();
