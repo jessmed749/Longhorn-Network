@@ -26,6 +26,24 @@ public class UniversityStudent extends Student {
         return this.name;
     }
 
+    public String getMajor() {
+        return this.major;
+    }
+    
+    public double getGPA() {
+        return this.gpa;
+    }
+
+    public List<String> getPreviousInternships() {
+        return previousInternships;
+    }
+
+    public void addInternship(String internship) {
+        previousInternships.add(internship);
+    }
+
+    
+
     public synchronized void setRoommate(UniversityStudent roommate) {
         this.roommate = roommate;
     }
@@ -52,6 +70,15 @@ public class UniversityStudent extends Student {
     public synchronized List<String> getChatHistory(UniversityStudent other) {
         return chatHistory.getOrDefault(other, new ArrayList<>());
     }
+
+    public Set<UniversityStudent> getFriends() {
+        return Collections.unmodifiableSet(friends);
+    }
+    
+    public Map<UniversityStudent, List<String>> getAllChats() {
+        return chatHistory;
+    }
+    
     
     @Override
     public int calculateConnectionStrength(Student other) {

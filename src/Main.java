@@ -35,43 +35,43 @@ public class Main {
     // Test Case 1: Two groups (Group 1 with four students having mutual preferences, Group 2 with a pair)
     public static List<UniversityStudent> generateTestCase1() {
         List<UniversityStudent> students = new ArrayList<>();
-
-        // Group 1: 4 students with full mutual roommate preferences.
-        students.add(new UniversityStudent(
-                "Alice", 20, "Female", 2, "Computer Science", 3.5,
-                Arrays.asList("Bob", "Charlie", "Frank"), Arrays.asList("Google")
-        ));
-        students.add(new UniversityStudent(
-                "Bob", 21, "Male", 3, "Computer Science", 3.7,
-                Arrays.asList("Alice", "Charlie", "Frank"), Arrays.asList("Google", "Microsoft")
-        ));
-        students.add(new UniversityStudent(
-                "Charlie", 20, "Male", 2, "Mathematics", 3.2,
-                Arrays.asList("Alice", "Bob", "Frank"), Arrays.asList("None")
-        ));
-        students.add(new UniversityStudent(
-                "Frank", 23, "Male", 3, "Chemistry", 3.1,
-                Arrays.asList("Alice", "Bob", "Charlie"), Arrays.asList()
-        ));
-
-        // Group 2: 2 students
-        students.add(new UniversityStudent(
-                "Dana", 22, "Female", 4, "Biology", 3.8,
-                Arrays.asList("Evan"), Arrays.asList("Pfizer")
-        ));
-        students.add(new UniversityStudent(
-                "Evan", 22, "Male", 4, "Biology", 3.6,
-                Arrays.asList("Dana"), Arrays.asList("Moderna", "Pfizer")
-        ));
-
+    
+        students.add(new UniversityStudent("Alice", 20, "Female", 2, "Computer Science", 3.5,
+                Arrays.asList("Bob", "Charlie", "Frank"), Arrays.asList("Google")));
+        students.add(new UniversityStudent("Bob", 21, "Male", 3, "Computer Science", 3.7,
+                Arrays.asList("Alice", "Charlie", "Frank"), Arrays.asList("Google", "Microsoft")));
+        students.add(new UniversityStudent("Charlie", 20, "Male", 2, "Mathematics", 3.2,
+                Arrays.asList("Alice", "Bob", "Frank"), Arrays.asList("None")));
+        students.add(new UniversityStudent("Frank", 23, "Male", 3, "Chemistry", 3.1,
+                Arrays.asList("Alice", "Bob", "Charlie"), Arrays.asList()));
+        students.add(new UniversityStudent("Dana", 22, "Female", 4, "Biology", 3.8,
+                Arrays.asList("Evan"), Arrays.asList("Pfizer")));
+        students.add(new UniversityStudent("Evan", 22, "Male", 4, "Biology", 3.6,
+                Arrays.asList("Dana"), Arrays.asList("Moderna", "Pfizer")));
+    
+        ExecutorService pool = Executors.newFixedThreadPool(6);
+        GaleShapley.assignRoommates(students);
+    
+        for (UniversityStudent s : students) {
+            UniversityStudent mate = s.getRoommate();
+            if (mate != null && s.getName().compareTo(mate.getName()) < 0) {
+                pool.submit(new ChatThread(s, mate, "Hey " + mate.getName() + ", we’re officially roommates! 🎉"));
+                pool.submit(new ChatThread(mate, s, "Hey " + s.getName() + ", looking forward to it!"));
+                s.addFriend(mate);
+                mate.addFriend(s);
+            }
+        }
+    
+        pool.shutdown();
         return students;
     }
+    
 
     // Test Case 2: Three students in which one has "DummyCompany" as a previous internship.
     // This test case should yield a referral path when searching for "DummyCompany".
     public static List<UniversityStudent> generateTestCase2() {
         List<UniversityStudent> students = new ArrayList<>();
-
+    
         students.add(new UniversityStudent(
                 "Greg", 24, "Male", 4, "Economics", 3.4,
                 Arrays.asList("Helen", "Ivy"), Arrays.asList("InternshipA")
@@ -84,7 +84,36 @@ public class Main {
                 "Ivy", 25, "Female", 4, "Economics", 3.8,
                 Arrays.asList("Helen", "Greg"), Arrays.asList("DummyCompany")
         ));
-
+    
+        // Assign roommates before initiating chats
+        GaleShapley.assignRoommates(students);
+    
+        ExecutorService pool = Executors.newFixedThreadPool(4);
+    
+        // Add roommate chats and friendships
+        for (UniversityStudent s : students) {
+            UniversityStudent mate = s.getRoommate();
+            if (mate != null && s.getName().compareTo(mate.getName()) < 0) {
+                pool.submit(new ChatThread(s, mate, "Hey " + mate.getName() + ", we’re officially roommates! 🎉"));
+                pool.submit(new ChatThread(mate, s, "Hey " + s.getName() + ", looking forward to it!"));
+                s.addFriend(mate);
+                mate.addFriend(s);
+            }
+        }
+    
+        // Add a custom thread between Helen and Ivy
+        UniversityStudent helen = students.get(1);
+        UniversityStudent ivy = students.get(2);
+        pool.submit(new FriendRequestThread(helen, ivy));
+        pool.submit(new ChatThread(helen, ivy, "Got any advice on DummyCompany?"));
+    
+        pool.shutdown();
+        try {
+            pool.awaitTermination(3, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    
         return students;
     }
 
@@ -92,7 +121,7 @@ public class Main {
     // Two of them can be paired and one remains unpaired.
     public static List<UniversityStudent> generateTestCase3() {
         List<UniversityStudent> students = new ArrayList<>();
-
+    
         students.add(new UniversityStudent(
                 "Jack", 19, "Male", 1, "History", 3.0,
                 Arrays.asList("Kim"), Arrays.asList("MuseumIntern")
@@ -105,7 +134,36 @@ public class Main {
                 "Leo", 20, "Male", 1, "History", 3.5,
                 Collections.emptyList(), Arrays.asList("None")
         ));
-
+    
+        // Assign roommates first
+        GaleShapley.assignRoommates(students);
+    
+        ExecutorService pool = Executors.newFixedThreadPool(4);
+    
+        // Add roommate chats and friendships
+        for (UniversityStudent s : students) {
+            UniversityStudent mate = s.getRoommate();
+            if (mate != null && s.getName().compareTo(mate.getName()) < 0) {
+                pool.submit(new ChatThread(s, mate, "Hey " + mate.getName() + ", we’re officially roommates! 🎉"));
+                pool.submit(new ChatThread(mate, s, "Hey " + s.getName() + ", looking forward to it!"));
+                s.addFriend(mate);
+                mate.addFriend(s);
+            }
+        }
+    
+        // Add custom message between Jack and Kim
+        UniversityStudent jack = students.get(0);
+        UniversityStudent kim = students.get(1);
+        pool.submit(new FriendRequestThread(jack, kim));
+        pool.submit(new ChatThread(jack, kim, "Let's study together!"));
+    
+        pool.shutdown();
+        try {
+            pool.awaitTermination(3, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    
         return students;
     }
 
