@@ -1,6 +1,6 @@
 # Longhorn Network
 
-**Longhorn Network** is a Java-based simulation of a social platform tailored for university students. Built as part of UT Austin's ECE 422C coursework, the project models dynamic student interactions through roommate matching, internship referrals, and real-time communication.
+**Longhorn Network** is a Java-based simulation of a social platform tailored for university students. The project models dynamic student interactions through roommate matching, internship referrals, and real-time communication.
 
 ## 🌟 Features
 
